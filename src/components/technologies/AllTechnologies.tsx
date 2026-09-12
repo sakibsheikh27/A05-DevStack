@@ -1,4 +1,6 @@
 import type { Itechnology } from "../type/technologyType";
+import SelectedCard from "./SelectedCard";
+import TechnologyCard from "./TechnologyCard";
 
 interface AllTechnologiesProps {
     technologies: Itechnology[];
@@ -6,16 +8,19 @@ interface AllTechnologiesProps {
 
 const AllTechnologies = ({technologies}: AllTechnologiesProps) => {
     return (
-        <div>
-            {
-                technologies.map(technology => {
-                    return <div>
-                        
-                        <li className="text-green-500 font- bold">{technology.name}</li>
-                    </div>
-                })
-            }
-        </div>
+        <div className="grid grid-cols-[70%_30%] gap-6">
+            <div className="grid grid-cols-3 gap-4">
+                {technologies.map((technology) => {
+                    return (
+                        <div>
+                            <TechnologyCard key={technology.id} technology={technology}></TechnologyCard>
+                        </div>
+                    )})}
+            </div>
+            <div>
+                <SelectedCard></SelectedCard>
+            </div>
+        </div> 
     );
 };
 

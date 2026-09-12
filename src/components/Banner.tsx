@@ -11,8 +11,8 @@ const Banner = () => {
                     next project.
                 </p>
                 <div className="flex gap-4 mt-8">
-                    <button className="px-4 py-3 rounded-lg font-semibold text-white bg-gradient-to-r from-orange-500 to-pink-500">Explore Technologies</button>
-                    <button className="px-8 py-3 rounded-lg border border-gray-200 text-[#526078] font-medium">Learn More</button>
+                    <button className="px-3 py-2 rounded-lg font-semibold text-white bg-gradient-to-r from-orange-500 to-pink-500">Explore Technologies</button>
+                    <button className="px-9 py-2 rounded-lg outline outline-gray-200 text-[#526078] font-semibold">Learn More</button>
                 </div>
             </div>
             <div className="w-[40%] flex justify-center">
