@@ -10,10 +10,19 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
 
     const technologies = use(technologiesPromise);
 
-    const handleSelectedTechnologies = (technology: Itechnology):void => {
-        const newSelectedTechnologies = [...selectedTechnologies, technology];
-        setselectedTechnologies(newSelectedTechnologies);
+    const handleSelectedTechnologies = (technology: Itechnology) => {
+        setselectedTechnologies((prev) => [...prev, technology]);
     }
+
+    const handleDeleteTechnology = (technology: Itechnology) => {
+        const restTechnology = selectedTechnologies.filter(
+            (selectedTechnology) => selectedTechnology.id !== technology.id,
+        );
+        setselectedTechnologies(restTechnology);
+    }
+
+    
+
     return (
         <div className="max-w-[1400px] mx-auto px-4 pt-6">
             <div>
@@ -23,8 +32,12 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
 
 
 
-            <AllTechnologies technologies={technologies} handleSelectedTechnologies={handleSelectedTechnologies}></AllTechnologies>
-
+            <AllTechnologies 
+            technologies={technologies} 
+            selectedTechnologies={selectedTechnologies} 
+            handleSelectedTechnologies={handleSelectedTechnologies}
+            setselectedTechnologies={setselectedTechnologies}
+            ></AllTechnologies>
         </div>
     );
 };

@@ -6,14 +6,16 @@ import { DiRedis } from "react-icons/di";
 import { IoLogoJavascript } from "react-icons/io";
 import { BsTypescript } from "react-icons/bs";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 interface TechnologyCardProps {
     technology: Itechnology;
     handleSelectedTechnologies: (technology: Itechnology) => void;
+    selectedTechnologies: Itechnology[];
 }
 
 
-const TechnologyCard = ({technology, handleSelectedTechnologies}: TechnologyCardProps) => {
+const TechnologyCard = ({technology, handleSelectedTechnologies, selectedTechnologies}: TechnologyCardProps) => {
 
     const icons = {
         react: <FaReact />,
@@ -29,11 +31,24 @@ const TechnologyCard = ({technology, handleSelectedTechnologies}: TechnologyCard
         tailwind: <RiTailwindCssFill />,
         docker: <FaDocker />,
     };
-    const [isSelsected, setIsSelected] = useState(false);
+const isSelected = selectedTechnologies.some(
+    (item) => item.id === technology.id
+);
+
+    // const [isSelsected, setIsSelected] = useState(false);
+
+    const handleAddToStock = () => {
+        // setIsSelected(true);
+        handleSelectedTechnologies(technology);
+        toast.success(`${technology.name} is purchased successfully`);
+        
+    };
+
+    
 
     return (
         <div>
-            <div className=" px-4 py-4 rounded-lg outline outline-gray-200">
+            <div className={`px-4 py-4 rounded-lg ${isSelected === true ? 'border border-purple-400' : 'outline outline-gray-200'}`}>
                 <div className="flex justify-between">
                     <span className="text-purple-500 text-3xl">{icons[technology.icon as keyof typeof icons]}</span>
                     <p className="text-while-500 bg-purple-300 border border-purple-300 rounded-4xl px-2">{technology.badge}</p>
@@ -53,10 +68,10 @@ const TechnologyCard = ({technology, handleSelectedTechnologies}: TechnologyCard
                 </div>
                 <div className="flex justify-center">
                     <button 
-                        onClick={() => setIsSelected(true)} 
-                        className={`w-full border ${isSelsected === true ? 'border-purple-400 bg-purple-400 cursor-not-allowed opacity-50' : 'border-pink-400 bg-pink-400 cursor-pointer'} rounded-4xl px-9 py-2 my-4 text-center cursor-pointer font-medium`}
-                        disabled = {isSelsected}
-                        >{isSelsected === true ? 'Added to Stock' : 'Add to Stock'}</button>
+                        onClick={handleAddToStock} 
+                        className={`w-full border ${isSelected === true ? 'border-purple-400 bg-purple-400 cursor-not-allowed opacity-50' : 'border-pink-400 bg-pink-400 cursor-pointer'} rounded-4xl px-9 py-2 my-4 text-center font-medium`}
+                        disabled = {isSelected}
+                        >{isSelected === true ? 'Added to Stock' : 'Add to Stock'}</button>
                 </div>
             </div>
             
