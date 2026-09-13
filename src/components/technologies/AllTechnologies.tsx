@@ -16,17 +16,17 @@ const AllTechnologies = ({
     selectedTechnologies,
     setselectedTechnologies,
 }: AllTechnologiesProps) => {
-    return (
-        <div className="grid grid-cols-[70%_30%] gap-8 mt-[40px]">
+    return (        //flex flex-col lg:flex-row gap-6
+        <div className="grid grid-cols-1 lg:grid-cols-[70%_30%] gap-8 mt-[40px]">
 
-            <div className="grid grid-cols-3 gap-9">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {technologies.map((technology) => (
                     <div key={technology.id}>
                         <TechnologyCard
                             handleSelectedTechnologies={handleSelectedTechnologies}
                             technology={technology}
                             selectedTechnologies={selectedTechnologies}
-                        />
+                        ></TechnologyCard>
                     </div>
                 ))}
             </div>

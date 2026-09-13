@@ -4,7 +4,7 @@ const Footer = () => {
         <div>
             <hr className="my-[40px] border-gray-100" />
             <div className="max-w-[1400px] mx-auto px-4 pt-6">
-                <div className="flex justify-between list-none">
+                <div className="flex flex-col gap-8 md:flex-row md:justify-between list-none">
                     <div>
                         <img src={FooterLogo} alt="Foother Logo" />
                         <p className="tex-[12px] text-[#526078] max-w-[350px] mt-2">Curated tools, technologies, and resources for developers building
@@ -34,7 +34,7 @@ const Footer = () => {
                     <span><a href="https://x.com/sakibsheikh27" target="blank">LinkedIn</a></span>
                 </div>
                 <hr className="my-[40px] border-gray-100" />
-                <div className="flex justify-between mb-9">
+                <div className="flex flex-col md:flex-row md:justify-between mb-9">
                     <p className="tex-[5px] text-[#526078]">&copy;2026.Dev Stack. All rights reserved </p>
                     <div>
                         <span className="tex-[5px] text-[#526078] mx-3">Privacy</span>
