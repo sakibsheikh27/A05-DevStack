@@ -14,13 +14,7 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
         setselectedTechnologies((prev) => [...prev, technology]);
     }
 
-    const handleDeleteTechnology = (technology: Itechnology) => {
-        const restTechnology = selectedTechnologies.filter(
-            (selectedTechnology) => selectedTechnology.id !== technology.id,
-        );
-        setselectedTechnologies(restTechnology);
-    }
-
+    
     
 
     return (
