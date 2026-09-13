@@ -15,13 +15,13 @@ Users can add a technology to their stock. Once added, the button changes to "Ad
 
 Users can view their selected technologies, remove individual technologies, or remove all selected technologies from their stock.
 
- # Technologies Used
- React
- TypeScript
- Tailwind CSS
- Vite
- React Icons
- React Toastify
+ Technologies Used
+ 1.React
+ 2.TypeScript
+ 3.Tailwind CSS
+ 4.Vite
+ 5.React Icons
+ 6.React Toastify
 
 
  React Questions & Answers
