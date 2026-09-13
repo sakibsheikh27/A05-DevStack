@@ -1,4 +1,4 @@
-import { use } from "react";
+import { use, useState } from "react";
 import type { Itechnology } from "../type/technologyType";
 import AllTechnologies from "./AllTechnologies";
 
@@ -6,8 +6,14 @@ interface TechnologiesProps {
     technologiesPromise: Promise<Itechnology[]>
 }
 const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
+    const [selectedTechnologies, setselectedTechnologies] = useState<Itechnology[]>([]);
 
     const technologies = use(technologiesPromise);
+
+    const handleSelectedTechnologies = (technology: Itechnology):void => {
+        const newSelectedTechnologies = [...selectedTechnologies, technology];
+        setselectedTechnologies(newSelectedTechnologies);
+    }
     return (
         <div className="max-w-[1400px] mx-auto px-4 pt-6">
             <div>
@@ -17,7 +23,8 @@ const Technologies = ({ technologiesPromise }: TechnologiesProps) => {
 
 
 
-            <AllTechnologies technologies={technologies}></AllTechnologies>
+            <AllTechnologies technologies={technologies} handleSelectedTechnologies={handleSelectedTechnologies}></AllTechnologies>
+
         </div>
     );
 };

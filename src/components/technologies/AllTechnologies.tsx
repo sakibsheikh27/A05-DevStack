@@ -4,16 +4,17 @@ import TechnologyCard from "./TechnologyCard";
 
 interface AllTechnologiesProps {
     technologies: Itechnology[];
+    handleSelectedTechnologies: (technology: Itechnology) => void;
 }
 
-const AllTechnologies = ({technologies}: AllTechnologiesProps) => {
+const AllTechnologies = ({technologies, handleSelectedTechnologies}: AllTechnologiesProps) => {
     return (
-        <div className="grid grid-cols-[70%_30%] gap-6">
-            <div className="grid grid-cols-3 gap-4">
+        <div className="grid grid-cols-[70%_30%] gap-8 mt-[40px]">
+            <div className="grid grid-cols-3 gap-9">
                 {technologies.map((technology) => {
                     return (
                         <div>
-                            <TechnologyCard key={technology.id} technology={technology}></TechnologyCard>
+                        <TechnologyCard handleSelectedTechnologies={handleSelectedTechnologies} key={technology.id} technology={technology}></TechnologyCard>
                         </div>
                     )})}
             </div>
