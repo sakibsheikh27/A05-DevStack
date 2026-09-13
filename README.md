@@ -1,32 +1,57 @@
-# React + TypeScript + Vite
+Technology Stock
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+A simple and responsive web application where users can explore different technologies and add their favorite technologies to their stock. Users can also manage their selected technologies by removing individual items or clearing all selected items.
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+1. Explore Technologies:
 
-## React Compiler
+Users can see different technologies with their name, category, level, rating, badge, and description.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. Add to Stock:
 
-## Expanding the Oxlint configuration
+Users can add a technology to their stock. Once added, the button changes to "Added to Stock" so the same technology cannot be added again.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+3. Manage Stock:
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+Users can view their selected technologies, remove individual technologies, or remove all selected technologies from their stock.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+ # Technologies Used
+ React
+ TypeScript
+ Tailwind CSS
+ Vite
+ React Icons
+ React Toastify
+
+
+ React Questions & Answers
+
+#Answer-1
+JSX lets us write HTML-like code inside JavaScript.
+It makes creating React UI easier.
+
+#Answer-2
+Props are data passed from a parent to a child.
+State is data that belongs to a component and can change.
+
+#Answer-3
+useState is used to store and change data.
+I used it to store the technologies and selected technologies.
+
+#Answer-4
+useEffect runs code when a component loads or changes.
+I used it to load the technology data from the JSON file when the page loaded.
+
+#Answer-5
+A key helps React identify each item in a list.
+It helps React update the list correctly.
+
+
+#Answer-6
+Conditional rendering means showing something based on a condition.
+I used it to show an empty message when there are no selected technologies.
+
+
+#Answer-7
+We pass data from parent to child using props.
+A child can send something to the parent by calling a function passed through props.
